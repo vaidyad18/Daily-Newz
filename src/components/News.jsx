@@ -1,7 +1,24 @@
 import React, { useState, useEffect } from "react";
 import Card from "./Card";
+import { Moon, Sun } from "lucide-react";
 
 const News = ({ getData, search, setSearch, newsData }) => {
+  const [theme, setTheme] = useState(null);
+
+  const element = document.documentElement;
+
+  useEffect(() => {
+    if (theme === "dark") {
+      element.classList.add("dark");
+    } else {
+      element.classList.remove("dark");
+    }
+  }, [theme]);
+
+  const changeTheme = (e) => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   const handleSearch = (e) => {
     setSearch(e.target.value);
   };
@@ -44,7 +61,7 @@ const News = ({ getData, search, setSearch, newsData }) => {
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-full bg-white dark:bg-gray-950">
       <div className="bg-[url(./buildings.jpg)] bg-center bg-cover m-5 py-12 xs:py-16 md:py-20 rounded-2xl px-10 xs:px-32 flex items-center justify-center relative">
         <input
           className="bg-white border-none outline-none capitalize w-full py-1 sm:py-2 md:py-3 pl-3 sm:pl-5 text-[10px] sm:text-[12px] md:text-[15px] rounded-full"
@@ -68,7 +85,7 @@ const News = ({ getData, search, setSearch, newsData }) => {
             key={category.name}
             value={category.name}
             onClick={handleUser}
-            className="border-[1px] hover:bg-gray-200 duration-200 cursor-pointer justify-center items-center flex gap-2 rounded-full py-[6px] px-2 sm:px-4 text-[13px] hover:scale-105 transition-transform border-gray-400"
+            className="border-[1px] dark:hover:bg-gray-800 hover:bg-gray-200 duration-200 cursor-pointer justify-center items-center flex gap-2 rounded-full py-[6px] px-2 sm:px-4 text-[13px] hover:scale-105 transition-transform border-gray-400"
           >
             {category.logo && (
               <img
@@ -77,11 +94,28 @@ const News = ({ getData, search, setSearch, newsData }) => {
                 alt={category.name}
               />
             )}
-            <p className="md:text-[13.5px] text-[11px] capitalize">
+            <p className="md:text-[13.5px] dark:text-white text-black text-[11px] capitalize">
               {category.name}
             </p>
           </div>
         ))}
+
+        <button
+          className="dark:bg-gray-800 hover:scale-[115%] duration-300 transition-transform bg-gray-200 cursor-pointer rounded-full py-1 px-3"
+          onClick={changeTheme}
+        >
+          {theme === "light" ? (
+            <div className="flex gap-2 justify-center items-center">
+              <Sun className="w-5 h-5 text-orange-500" />
+              <span className="text-orange-500">Light Mode</span>
+            </div>
+          ) : (
+            <div className="flex gap-2 justify-center items-center">
+              <Moon className="w-5 h-5 text-blue-500" />
+              <span className="text-blue-500">Dark Mode</span>
+            </div>
+          )}
+        </button>
       </div>
 
       <div className="flex-col xs:hidden items-center justify-center m-5 -mt-2 gap-2 md:gap-5 font-semibold">
@@ -91,21 +125,27 @@ const News = ({ getData, search, setSearch, newsData }) => {
             onClick={handleUser}
             className="border-[1px] hover:bg-gray-200 duration-200 cursor-pointer justify-center items-center flex gap-2 rounded-full px-2 py-1 sm:px-4 text-[13px] hover:scale-105 transition-transform border-gray-400"
           >
-            <p className="md:text-[13.5px] text-[9px] xs:text-[11px] capitalize">All</p>
+            <p className="md:text-[13.5px] text-[9px] xs:text-[11px] capitalize">
+              All
+            </p>
           </div>
           <div
             value="politics"
             onClick={handleUser}
             className="border-[1px] hover:bg-gray-200 duration-200 cursor-pointer justify-center items-center flex gap-2 rounded-full px-2 py-1 sm:px-4 text-[13px] hover:scale-105 transition-transform border-gray-400"
           >
-            <p className="md:text-[13.5px] text-[9px] xs:text-[11px] capitalize">Politics</p>
+            <p className="md:text-[13.5px] text-[9px] xs:text-[11px] capitalize">
+              Politics
+            </p>
           </div>
           <div
             value="health"
             onClick={handleUser}
             className="border-[1px] hover:bg-gray-200 duration-200 cursor-pointer justify-center items-center flex gap-2 rounded-full px-2 py-1 sm:px-4 text-[13px] hover:scale-105 transition-transform border-gray-400"
           >
-            <p className="md:text-[13.5px] text-[9px] xs:text-[11px] capitalize">Health</p>
+            <p className="md:text-[13.5px] text-[9px] xs:text-[11px] capitalize">
+              Health
+            </p>
           </div>
           <div
             value="technology"
@@ -123,14 +163,18 @@ const News = ({ getData, search, setSearch, newsData }) => {
             onClick={handleUser}
             className="border-[1px] hover:bg-gray-200 duration-200 cursor-pointer justify-center items-center flex gap-2 rounded-full px-2 py-1 sm:px-4 text-[13px] hover:scale-105 transition-transform border-gray-400"
           >
-            <p className="md:text-[13.5px] text-[9px] xs:text-[11px] capitalize">Sports</p>
+            <p className="md:text-[13.5px] text-[9px] xs:text-[11px] capitalize">
+              Sports
+            </p>
           </div>
           <div
             value="business"
             onClick={handleUser}
             className="border-[1px] hover:bg-gray-200 duration-200 cursor-pointer justify-center items-center flex gap-2 rounded-full px-2 py-1 sm:px-4 text-[13px] hover:scale-105 transition-transform border-gray-400"
           >
-            <p className="md:text-[13.5px] text-[9px] xs:text-[11px] capitalize">Business</p>
+            <p className="md:text-[13.5px] text-[9px] xs:text-[11px] capitalize">
+              Business
+            </p>
           </div>
           <div
             value="entertainment"

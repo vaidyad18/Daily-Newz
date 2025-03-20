@@ -71,9 +71,9 @@ const LeftPanel = ({getData, search, setSearch, setNewsData}) => {
   }
 
   return (
-    <div className="fixed top-0 left-0 h-full md:w-64 px-4 border-r-2 my-5 border-r-gray-300 pb-6 overflow-y-auto">
+    <div className="fixed top-0 left-0 h-full md:w-64 px-4 border-r-2 py-5 bg-white dark:bg-gray-950 dark:border-r-gray-500 border-r-gray-300 pb-6 overflow-y-auto">
       <div onClick={handleLogo} className="flex justify-center cursor-pointer gap-2 xs:gap-3 items-center">
-        <p className="md:text-3xl text-md xs:text-2xl font-semibold">Daily Newz</p>
+        <p className="md:text-3xl text-md text-black dark:text-white xs:text-2xl font-semibold">Daily Newz</p>
         <img
           className="md:w-10 xs:w-7 w-5 pt-2"
           src="https://img.icons8.com/fluent/512/news.png"
@@ -86,7 +86,7 @@ const LeftPanel = ({getData, search, setSearch, setNewsData}) => {
           <p className="md:text-[17px] text-[12px] xs:text-[15px]">Home</p>
         </div>
 
-        <div className="xs:mt-3 mt-2 bg-gray-300 h-[2px]"></div>
+        <div className="xs:mt-3 mt-2 bg-gray-300 dark:bg-gray-500 h-[2px]"></div>
 
         <div className="mt-2 xs:mt-3">
           <p className="md:text-[17px] text-[13px] xs:text-[16px] font-semibold">Country</p>
@@ -101,7 +101,7 @@ const LeftPanel = ({getData, search, setSearch, setNewsData}) => {
                     src={flags[item]}
                     alt=""
                   />
-                  <p className="hover:text-blue-500 md:text-[15px] text-[11px] xs:text-[13px] text-gray-500">{item}</p>
+                  <p className="hover:text-blue-500 md:text-[15px] dark:text-gray-300 text-[11px] xs:text-[13px] text-gray-500">{item}</p>
                 </div>
               );
             })}
@@ -118,7 +118,7 @@ const LeftPanel = ({getData, search, setSearch, setNewsData}) => {
           </div>
         </div>
 
-        <div className="xs:mt-3 mt-2 bg-gray-300 h-[2px]"></div>
+        <div className="xs:mt-3 mt-2 bg-gray-300 dark:bg-gray-500 h-[2px]"></div>
 
         <div className="xs:mt-3 mt-2">
           <p className="md:text-[17px] text-[13px] xs:text-[16px] font-semibold">Channels</p>
@@ -131,7 +131,7 @@ const LeftPanel = ({getData, search, setSearch, setNewsData}) => {
                     src={channelLogo[item]}
                     alt=""
                   />
-                  <p className="text-gray-500 md:text-[15px] text-[11px] xs:text-[13px] hover:text-blue-500">{item}</p>
+                  <p className="text-gray-500 md:text-[15px] dark:text-gray-300 text-[11px] xs:text-[13px] hover:text-blue-500">{item}</p>
                 </div>
               );
             })}

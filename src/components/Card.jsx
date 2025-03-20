@@ -32,8 +32,8 @@ const Card = ({ data }) => {
                 src={item.urlToImage}
                 alt={item.title}
               />
-              <a className="lg:text-[18px] md:text-[16px] text-[12px] sm:text-[14px] font-semibold">{item.title}</a>
-              <p className="line-clamp-3 mt-1 text-[11px] sm:text-[12px] md:text-[14px] lg:text-[16px] text-gray-700">
+              <a className="lg:text-[18px] dark:text-white text-black md:text-[16px] text-[12px] sm:text-[14px] font-semibold">{item.title}</a>
+              <p className="line-clamp-3 dark:text-gray-400 mt-1 text-[11px] sm:text-[12px] md:text-[14px] lg:text-[16px] text-gray-700">
                 {item.description}
               </p>
             </div>

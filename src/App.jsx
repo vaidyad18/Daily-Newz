@@ -5,7 +5,8 @@ import { useState, useEffect } from "react";
 function App() {
   const [search, setSearch] = useState("global");
   const [newsData, setNewsData] = useState(null);
-
+  
+  
   useEffect(() => {
     getData(search);
   }, []);
@@ -22,9 +23,10 @@ function App() {
 
   return (
     <>
-      <div className="flex">
+      <div className="flex ">
         <LeftPanel getData={getData} search={search} setSearch={setSearch} setNewsData={setNewsData}/>
-        <div className="md:ml-64 ml-[142px] xs:ml-48 w-full">
+        <div className="md:ml-64 ml-[142px] xs:ml-48 w-full bg-white dark:bg-black">
+
           <News
             getData={getData}
             search={search}
