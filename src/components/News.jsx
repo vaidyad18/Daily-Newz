@@ -8,15 +8,15 @@ const News = ({ getData, search, setSearch, newsData }) => {
   const element = document.documentElement;
 
   useEffect(() => {
-    if (theme === "dark") {
-      element.classList.add("dark");
-    } else {
+    if (theme === "light") {
       element.classList.remove("dark");
+    } else {
+      element.classList.add("dark");
     }
   }, [theme]);
 
   const changeTheme = (e) => {
-    setTheme(theme === "dark" ? "light" : "dark");
+    setTheme(theme === "light" ? "dark" : "light");
   };
 
   const handleSearch = (e) => {
