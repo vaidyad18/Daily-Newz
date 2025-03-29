@@ -1,6 +1,7 @@
 import News from "./components/News";
 import LeftPanel from "./components/LeftPanel";
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 function App() {
   const [search, setSearch] = useState("global");
@@ -13,12 +14,17 @@ function App() {
 
   const key = "ab714619aa65441c94d7489d7f943193";
   const getData = async (news) => {
-    const response = await fetch(
-      `https://newsapi.org/v2/everything?q=${news}&language=en&from=2025-03-28&sortBy=publishedAt&apiKey=${key}`
-    );
-    const data = await response.json();
-    console.log(data.articles);
-    setNewsData(data.articles);
+    try {
+      const response = await axios.get(
+        `https://newsapi.org/v2/everything?q=${news}&language=en&from=2025-03-28&sortBy=publishedAt&apiKey=${key}`,
+        {
+          headers:"application/json"
+        }
+      );
+      setNewsData(response.data.articles);
+    } catch (error) {
+      console.error("Error fetching news:", error);
+    }
   };
 
   return (
