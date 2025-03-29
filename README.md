@@ -16,10 +16,9 @@ Welcome to **Daily Newz**, a modern and dynamic news website that delivers the l
 - **News API**: Integrated with a reliable news API to fetch real-time news updates.
 
 ## How to Use the Project
-1. Open your browser and go to `http://localhost:5173`.
-2. Browse the latest news updates on the homepage.
-3. Use the navigation bar to explore different news categories.
-4. Select a country to view localized news.
-5. Use the search bar to find specific news articles.
-6. The website is fully responsive, so you can access it from any device.
+1. Browse the latest news updates on the homepage.
+2. Use the navigation bar to explore different news categories.
+3. Select a country to view localized news.
+4. Use the search bar to find specific news articles.
+5. The website is fully responsive, so you can access it from any device.
 
