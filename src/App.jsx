@@ -14,23 +14,22 @@ function App() {
 
   const key = "ab714619aa65441c94d7489d7f943193";
   const getData = async (news) => {
-    try {
-      const response = await fetch(
-        `https://newsapi.org/v2/everything?q=${news}&language=en&from=2025-03-28&sortBy=publishedAt&apiKey=${key}`,
-        {
-          headers: {
-            "User-Agent": "Mozilla/5.0",
-            "Accept": "application/json",
-          },
-        }
-      );
-      const data = await response.json();
-      setNewsData(data.articles);
-    } catch (error) {
-      console.error("Error fetching news:", error);
-    }
+    const response = await fetch(
+      `https://newsapi.org/v2/everything?q=${news}&language=en&from=2025-03-28&sortBy=publishedAt&apiKey=${key}`,
+      {
+        headers: {
+          "User-Agent": "Mozilla/5.0",
+          "Accept": "application/json",
+        },
+      }
+    );
+  
+    const data = await response.json();
+    console.log(data.articles);
+    setNewsData(data.articles);
   };
   
+
   return (
     <>
       <div className="flex ">
