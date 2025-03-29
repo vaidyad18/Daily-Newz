@@ -16,7 +16,7 @@ function App() {
   const getData = async (news) => {
     try {
       const response = await fetch(
-        `https://newsapi.org/v2/everything?q=${news}&language=en&from=2025-03-28&sortBy=publishedAt&apiKey=${key}`,
+        `http://newsapi.org/v2/everything?q=${news}&language=en&from=2025-03-28&sortBy=publishedAt&apiKey=${key}`,
         {
           headers: {
             "User-Agent": "Mozilla/5.0",
