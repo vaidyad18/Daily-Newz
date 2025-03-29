@@ -23,7 +23,7 @@ const Card = ({ data }) => {
 
           return (
             <div
-              className="xl:w-[383px] w-[250px] xs:w-[200px] sm:w-[250px] md:w-[300px] hover:scale-[103%] hover:border-[2px] hover:border-blue-500 p-2 transition-transform duration-300 cursor-pointer flex-col items-center justify-center rounded-3xl"
+              className="xl:w-[383px] w-[250px] xs:w-[200px] sm:w-[250px] md:w-[300px] hover:scale-[103%] shadow-md dark:shadow-gray-900 hover:shadow-3xl dark:hover:shadow-3xl p-2 transition-transform duration-300 cursor-pointer flex-col items-center justify-center rounded-3xl"
               key={item.title}
               onClick={() => window.open(item.url)}
             >
